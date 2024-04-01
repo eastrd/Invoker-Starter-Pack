@@ -4,7 +4,7 @@
 
 SCRIPTS:
   - Name: Subdomain Lookup
-    Description: Look up subdomains via Crt.sh
+    Description: Look up subdomains via Certificate Search (crt.sh)
     Params:
       - Name: Domain
         Description: Domain name to lookup
@@ -15,7 +15,7 @@ SCRIPTS:
     Command: python subdomain/crt.sh.py {Domain}
 
   - Name: Have I Been Pwned
-    Description: Query Email via Have I Been Pwned (API KEY REQUIRED)
+    Description: Have I Been Pwned allows you to search across multiple data breaches to see if your email address or phone number has been compromised. (API KEY REQUIRED)
     Command: python HIBP_lookup.py {Email}
     Params:
       - Name: Email
@@ -24,3 +24,25 @@ SCRIPTS:
         Options:
           - PRIMARY
           - MANDATORY
+
+  - Name: InternetDB IP Lookups
+    Description: The InternetDB API provides a fast way to see the open ports for an IP address. It gives a quick, at-a-glance view of the type of device that is running behind an IP address to help you make decisions based on the open ports.
+    Params:
+      - Name: IP
+        Description: IP address to lookup
+        Type: STRING
+        Options:
+          - PRIMARY
+          - MANDATORY
+    Command: python internetdb_shodan.py {IP}
+
+  - Name: IP Geolocation API
+    Description: Query via IP-API.com. Free for non-commercial use, no API key required.
+    Params:
+      - Name: IP
+        Description: IPv4 / IPv6 address to look up
+        Type: STRING
+        Options:
+          - PRIMARY
+          - MANDATORY
+    Command: python ip-api.py {IP}
