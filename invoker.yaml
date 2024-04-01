@@ -1,0 +1,26 @@
+# PATHS:
+#   # Replace with your directory below
+#   - D:\Invoker-Starter-Pack\
+
+SCRIPTS:
+  - Name: Subdomain Lookup
+    Description: Look up subdomains via Crt.sh
+    Params:
+      - Name: Domain
+        Description: Domain name to lookup
+        Type: STRING
+        Options:
+          - PRIMARY
+          - MANDATORY
+    Command: python subdomain/crt.sh.py {Domain}
+
+  - Name: Have I Been Pwned
+    Description: Query Email via Have I Been Pwned (API KEY REQUIRED)
+    Command: python HIBP_lookup.py {Email}
+    Params:
+      - Name: Email
+        Description: Email address to query
+        Type: STRING
+        Options:
+          - PRIMARY
+          - MANDATORY
