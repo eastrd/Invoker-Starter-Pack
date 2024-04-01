@@ -22,16 +22,17 @@ result, err = get_breach_info(sys.argv[1], API_KEY)
 
 if err:
     print(json.dumps({"type": "Tree", "results": [f"# Error\n{err}"]}))
-else:
-    domains = []
-    for each in result:
-        domains.append(f"### {each['Name']}")
+    exit()
 
-    print(
-        json.dumps(
-            {
-                "type": "Tree",
-                "results": domains,
-            }
-        )
+domains = []
+for each in result:
+    domains.append(f"### {each['Name']}")
+
+print(
+    json.dumps(
+        {
+            "type": "Tree",
+            "results": domains,
+        }
     )
+)

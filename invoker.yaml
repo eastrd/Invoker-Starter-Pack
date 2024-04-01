@@ -12,11 +12,10 @@ SCRIPTS:
         Options:
           - PRIMARY
           - MANDATORY
-    Command: python subdomain/crt.sh.py {Domain}
+    Command: python domain/crt.sh.py {Domain}
 
   - Name: Have I Been Pwned
     Description: Have I Been Pwned allows you to search across multiple data breaches to see if your email address or phone number has been compromised. (API KEY REQUIRED)
-    Command: python HIBP_lookup.py {Email}
     Params:
       - Name: Email
         Description: Email address to query
@@ -24,6 +23,7 @@ SCRIPTS:
         Options:
           - PRIMARY
           - MANDATORY
+    Command: osint/python HIBP_lookup.py {Email}
 
   - Name: InternetDB IP Lookups
     Description: The InternetDB API provides a fast way to see the open ports for an IP address. It gives a quick, at-a-glance view of the type of device that is running behind an IP address to help you make decisions based on the open ports.
@@ -34,7 +34,7 @@ SCRIPTS:
         Options:
           - PRIMARY
           - MANDATORY
-    Command: python internetdb_shodan.py {IP}
+    Command: python ip/internetdb_shodan.py {IP}
 
   - Name: IP Geolocation API
     Description: Query via IP-API.com. Free for non-commercial use, no API key required.
@@ -45,4 +45,4 @@ SCRIPTS:
         Options:
           - PRIMARY
           - MANDATORY
-    Command: python ip-api.py {IP}
+    Command: python ip/ip-api.py {IP}
