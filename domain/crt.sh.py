@@ -8,10 +8,11 @@ def get_crtsh(domain):
     j = res.json()
     records = []
     for item in j:
-        common_name = item["common_name"].lower()
+        if item["common_name"]:
+            common_name = item["common_name"].lower()
+            records.append(common_name)
         name_values = map(lambda x: x.lower(), item["name_value"].split("\n"))
         records.extend(name_values)
-        records.append(common_name)
 
     records = list(set(records))  # dedup
 
@@ -19,7 +20,7 @@ def get_crtsh(domain):
     emails = []
     for subdomain in records:
         subdomain = subdomain.replace("*.", "")
-        if subdomain == domain:
+        if subdomain == domain or domain not in subdomain:
             continue
         if "@" in subdomain:
             emails.append(subdomain)
