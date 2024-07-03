@@ -7,12 +7,34 @@ SCRIPTS:
     Description: Look up subdomains via Certificate Search (crt.sh)
     Params:
       - Name: Domain
-        Description: Domain name to lookup
+        Description: Domain name to lookup subdomain
         Type: STRING
         Options:
           - PRIMARY
           - MANDATORY
     Command: python domain/crt.sh.py {Domain}
+
+  - Name: Domain To IP
+    Description: Get IP for the given domain name
+    Params:
+      - Name: Domain
+        Description: Domain name to lookup IP
+        Type: STRING
+        Options:
+          - PRIMARY
+          - MANDATORY
+    Command: python domain/domain_to_ip.py {Domain}
+
+  - Name: WHOIS
+    Description: Get WHOIS info for the given domain name
+    Params:
+      - Name: Domain
+        Description: Domain name to lookup WHOIS
+        Type: STRING
+        Options:
+          - PRIMARY
+          - MANDATORY
+    Command: python domain/whois.py {Domain}
 
   - Name: Have I Been Pwned
     Description: Have I Been Pwned allows you to search across multiple data breaches to see if your email address or phone number has been compromised. (API KEY REQUIRED)
