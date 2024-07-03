@@ -11,10 +11,8 @@ def get_whois(domain):
     raw_data = soup.find('pre', class_='df-raw')
     return raw_data.text.strip()
 
-
 domain = sys.argv[1]
 whois_info = get_whois(domain)
-
 
 print(
     json.dumps(
