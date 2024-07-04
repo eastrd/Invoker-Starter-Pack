@@ -47,11 +47,11 @@ SCRIPTS:
           - MANDATORY
     Command: python osint/HIBP_lookup.py {Email}
 
-  - Name: nmap
-    Description: Scan top 1000 port using Nmap, using T4 speed [NMAP INSTALLATION REQUIRED]
+  - Name: NMAP Top 1000 Ports (T4)
+    Description: Nmap scan single/multiple host(s) [NMAP INSTALLATION REQUIRED]
     Params:
       - Name: Target
-        Description: IP / Domain
+        Description: Target(s) to scan
         Type: STRING
         Options:
           - PRIMARY
