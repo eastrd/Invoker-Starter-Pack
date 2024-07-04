@@ -39,10 +39,10 @@ def parse_nmap_xml(xml_content):
                 product = ''
                 version = ''
             
-            results[-1][address_content] = [f"""### Port: {port_id}/{protocol}""" \
+            results[-1][address_content].append([f"""### Port: {port_id}/{protocol}""" \
                         + f"\n- Service: {service_name}" if service_name else "" \
                         + f"\n- Product: {product}" if product else "" \
-                        + f"\n- Version: {version}" if version else ""]
+                        + f"\n- Version: {version}" if version else ""])
     return results
 
 
