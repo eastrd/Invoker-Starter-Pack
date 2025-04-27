@@ -79,3 +79,26 @@ SCRIPTS:
           - PRIMARY
           - MANDATORY
     Command: python ip/ip-api.py {IP}
+
+  - Name: CSV Importer
+    Description: Imports a CSV file and constructs a general network graph based on its contents
+    Params:
+      - Name: CSVPath
+        Description: Path to the CSV file to import
+        Type: STRING
+        Options:
+          - MANDATORY
+      - Name: SourceColumn
+        Description: Name of the column representing the source node
+        Type: STRING
+        Options:
+          - MANDATORY
+      - Name: TargetColumn
+        Description: Name of the column representing the target node
+        Type: STRING
+        Options:
+          - MANDATORY
+      - Name: RelationshipColumn
+        Description: (Optional) Name of the column for the edge label (e.g., "friend", "called", etc.)
+        Type: STRING
+    Command: python importer/csv_importer.py {CSVPath} {SourceColumn} {TargetColumn} {RelationshipColumn}

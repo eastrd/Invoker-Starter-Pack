@@ -1,0 +1,5 @@
+Sender,Receiver,CommType
+Alice,Bob,friend
+Alice,Charlie,colleague
+Bob,Charlie,email
+Charlie,David,message
