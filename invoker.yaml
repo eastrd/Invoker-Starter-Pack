@@ -85,7 +85,7 @@ SCRIPTS:
     Params:
       - Name: CSVPath
         Description: Path to the CSV file to import
-        Type: STRING
+        Type: FILE
         Options:
           - MANDATORY
       - Name: SourceColumn
