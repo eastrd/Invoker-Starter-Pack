@@ -28,22 +28,22 @@ elif resp.status_code == 404:
 content = []
 
 if len(result["hostnames"]) > 0:
-    content.append({"## Hostnames": result["hostnames"]})
+    content.append({"## Hostnames": ["\n".join(result["hostnames"])]})
 
 if len(result["ports"]) > 0:
-    content.append({"## Ports": result["ports"]})
+    content.append({"## Ports": ["\n".join([str(d) for d in result["ports"]])]})
 
 if len(result["cpes"]) > 0:
-    content.append({"## CPEs": result["cpes"]})
+    content.append({"## CPEs": ["\n".join(result["cpes"])]})
 
 if len(result["tags"]) > 0:
-    content.append({"## Tags": result["tags"]})
+    content.append({"## Tags": ["\n".join(result["tags"])]})
 
 if len(result["cpes"]) > 0:
-    content.append({"## CPEs": result["cpes"]})
+    content.append({"## CPEs": ["\n".join(result["cpes"])]})
 
 if len(result["vulns"]) > 0:
-    content.append({"## Vulns": result["vulns"]})
+    content.append({"## Vulns": ["\n".join(result["vulns"])]})
 
 
 print(
